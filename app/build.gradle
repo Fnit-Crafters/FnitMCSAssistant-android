@@ -42,15 +42,15 @@ dependencies {
 
     compile 'com.github.bumptech.glide:glide:4.3.1'
     compile ("com.github.bumptech.glide:recyclerview-integration:4.3.1") {
-//         Excludes the support library because it's already included by Glide.
         transitive = false
     }
 
     def glideVersion = '4.3.1'
     kapt "com.github.bumptech.glide:compiler:$glideVersion"
 
-//    annotationProcessor 'com.github.bumptech.glide:compiler:4.3.1'
+    compile 'com.android.support:design:25.0.0'
 }
+
 repositories {
     mavenCentral()
     jcenter()
