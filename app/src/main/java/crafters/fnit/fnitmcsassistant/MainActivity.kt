@@ -4,24 +4,62 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
+import android.util.Log
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.FirebaseDatabase
+import com.google.firebase.database.ValueEventListener
+import crafters.fnit.fnitmcsassistant.Adapter.DataClass.Player
 import crafters.fnit.fnitmcsassistant.Adapter.PlayerAdapter
-import crafters.fnit.fnitmcsassistant.DataClass.Player
 
 class MainActivity : AppCompatActivity() {
-
-    val samplePlayers : Array<Player> = arrayOf(Player("Fnit", null), Player("Taiki", null))
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        // instantiate RecyclerView
         val playersRecyclerView = findViewById(R.id.playersRecyclerView) as? RecyclerView ?: return
         playersRecyclerView.setHasFixedSize(true)
-
         playersRecyclerView.layoutManager = LinearLayoutManager(this)
 
-        val playerAdapter = PlayerAdapter(samplePlayers)
+        val ref = FirebaseDatabase.getInstance().reference
 
-        playersRecyclerView.adapter = playerAdapter
+        ref.child("users").addValueEventListener(object : ValueEventListener {
+
+            override fun onDataChange(dataSnapshot: DataSnapshot?) {
+                // snapshotからdataを取り出す
+                dataSnapshot ?: return
+                val playersHash = dataSnapshot.value as? HashMap<String, Any>
+                playersHash ?: return
+
+                var players : MutableList<Player> = mutableListOf()
+
+                // HashのusersをPlayer ModelのArrayにparseする
+                playersHash.values.forEach {
+                    val playerHash = it as? HashMap<String, Any>
+                    playerHash ?: return
+
+                    val isOnline = playerHash["isOnline"] as? Boolean
+                    val name = playerHash["name"] as? String ?: ""
+                    val urlString = "https://minotar.net/avatar/" + name
+
+                    val player: Player = Player(name, urlString, null)
+
+                    players.add(player)
+                }
+
+                val playerArray = players.toTypedArray()
+
+                // instantiate Adapter
+                val playerAdapter = PlayerAdapter(playerArray)
+
+                playersRecyclerView.adapter = playerAdapter
+            }
+
+            override fun onCancelled(error: DatabaseError?) {
+                Log.w("onCancelled", "error: ${error}")
+            }
+        })
     }
 }
