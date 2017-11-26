@@ -49,7 +49,7 @@ class MainActivity : AppCompatActivity() {
                     val isOnline = playerHash["isOnline"] as? Boolean ?: false
                     val lastLogin = playerHash["lastLogin"] as? Long
 
-                    val player: Player = Player(name, urlString, isOnline, lastLogin)
+                    val player = Player(name, urlString, isOnline, lastLogin)
 
                     players.add(player)
                 }
