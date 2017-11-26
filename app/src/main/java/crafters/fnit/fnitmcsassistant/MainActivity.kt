@@ -1,6 +1,7 @@
 package crafters.fnit.fnitmcsassistant
 
 import android.os.Bundle
+import android.support.v7.app.ActionBar
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
@@ -17,6 +18,9 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        supportActionBar?.displayOptions = ActionBar.DISPLAY_SHOW_CUSTOM
+        supportActionBar?.setCustomView(R.layout.titlebar)
 
         // instantiate RecyclerView
         val playersRecyclerView = findViewById<RecyclerView>(R.id.playersRecyclerView) as? RecyclerView ?: return
