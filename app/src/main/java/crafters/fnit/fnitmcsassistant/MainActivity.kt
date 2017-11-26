@@ -1,6 +1,7 @@
 package crafters.fnit.fnitmcsassistant
 
 import android.os.Bundle
+import android.support.design.widget.BottomNavigationView
 import android.support.v7.app.ActionBar
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
@@ -13,6 +14,8 @@ import com.google.firebase.database.ValueEventListener
 import crafters.fnit.fnitmcsassistant.Adapter.DataClass.Player
 import crafters.fnit.fnitmcsassistant.Adapter.PlayerAdapter
 
+
+
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -21,6 +24,21 @@ class MainActivity : AppCompatActivity() {
 
         supportActionBar?.displayOptions = ActionBar.DISPLAY_SHOW_CUSTOM
         supportActionBar?.setCustomView(R.layout.titlebar)
+
+        val bottomNavigationView: BottomNavigationView = findViewById(R.id.navigation)
+
+        bottomNavigationView.setOnNavigationItemSelectedListener { item ->
+            when (item.itemId) {
+//                R.id.nav_camera -> Log.d("MainActivity", "nav_camera")
+//                R.id.nav_gallery -> Log.d("MainActivity", "nav_gallery")
+//                R.id.nav_slideshow -> Log.d("MainActivity", "nav_slideshow")
+//                R.id.nav_manage -> Log.d("MainActivity", "nav_manage")
+                R.id.home_item -> Log.d("Fnit", "home")
+                R.id.chat_item -> Log.d("Fnit", "chat")
+                R.id.setting_item -> Log.d("Fnit", "setting")
+            }
+            false
+        }
 
         // instantiate RecyclerView
         val playersRecyclerView = findViewById<RecyclerView>(R.id.playersRecyclerView) as? RecyclerView ?: return
