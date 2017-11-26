@@ -19,7 +19,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         // instantiate RecyclerView
-        val playersRecyclerView = findViewById(R.id.playersRecyclerView) as? RecyclerView ?: return
+        val playersRecyclerView = findViewById<RecyclerView>(R.id.playersRecyclerView) as? RecyclerView ?: return
         playersRecyclerView.setHasFixedSize(true)
         playersRecyclerView.layoutManager = LinearLayoutManager(this)
 
@@ -40,11 +40,12 @@ class MainActivity : AppCompatActivity() {
                     val playerHash = it as? HashMap<String, Any>
                     playerHash ?: return
 
-                    val isOnline = playerHash["isOnline"] as? Boolean
                     val name = playerHash["name"] as? String ?: ""
                     val urlString = "https://minotar.net/avatar/" + name
+                    val isOnline = playerHash["isOnline"] as? Boolean ?: false
+                    val lastLogin = playerHash["lastLogin"] as? Long
 
-                    val player: Player = Player(name, urlString, null)
+                    val player: Player = Player(name, urlString, isOnline, lastLogin)
 
                     players.add(player)
                 }

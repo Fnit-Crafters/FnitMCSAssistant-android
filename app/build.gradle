@@ -1,5 +1,6 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion 26
@@ -26,15 +27,34 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     compile 'com.android.support:appcompat-v7:26.+'
+
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     testCompile 'junit:junit:4.12'
     compile "org.jetbrains.kotlin:kotlin-stdlib-jre7:$kotlin_version"
+
+    //noinspection GradleCompatible
     compile 'com.android.support:recyclerview-v7:21.0.+'
+
     compile 'com.google.firebase:firebase-core:10.2.6'
     compile 'com.google.firebase:firebase-database:10.2.6'
+
+    compile 'com.github.kittinunf.fuel:fuel-android:1.12.+'
+
+    compile 'com.github.bumptech.glide:glide:4.3.1'
+    compile ("com.github.bumptech.glide:recyclerview-integration:4.3.1") {
+//         Excludes the support library because it's already included by Glide.
+        transitive = false
+    }
+
+    def glideVersion = '4.3.1'
+    kapt "com.github.bumptech.glide:compiler:$glideVersion"
+
+//    annotationProcessor 'com.github.bumptech.glide:compiler:4.3.1'
 }
 repositories {
     mavenCentral()
+    jcenter()
+    maven { url 'https://maven.google.com' }
 }
 
 apply plugin: 'com.google.gms.google-services'
