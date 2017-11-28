@@ -22,11 +22,13 @@ android {
 }
 
 dependencies {
+    implementation 'com.android.support:support-v4:26.1.0'
     compile fileTree(dir: 'libs', include: ['*.jar'])
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile 'com.android.support:appcompat-v7:26.+'
+    //noinspection GradleCompatible
+    compile 'com.android.support:appcompat-v7:26.1.0'
 
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     testCompile 'junit:junit:4.12'
@@ -41,16 +43,16 @@ dependencies {
     compile 'com.github.kittinunf.fuel:fuel-android:1.12.+'
 
     compile 'com.github.bumptech.glide:glide:4.3.1'
-    compile ("com.github.bumptech.glide:recyclerview-integration:4.3.1") {
-//         Excludes the support library because it's already included by Glide.
+    compile("com.github.bumptech.glide:recyclerview-integration:4.3.1") {
         transitive = false
     }
 
     def glideVersion = '4.3.1'
     kapt "com.github.bumptech.glide:compiler:$glideVersion"
 
-//    annotationProcessor 'com.github.bumptech.glide:compiler:4.3.1'
+    compile 'com.android.support:design:26.1.0'
 }
+
 repositories {
     mavenCentral()
     jcenter()
@@ -58,3 +60,5 @@ repositories {
 }
 
 apply plugin: 'com.google.gms.google-services'
+
+apply plugin: 'kotlin-android-extensions'
