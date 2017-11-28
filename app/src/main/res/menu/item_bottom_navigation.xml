@@ -15,5 +15,4 @@
         android:id="@+id/setting_item"
         android:icon="@drawable/ic_settings_white"
         android:title="Setting" />
-
 </menu>

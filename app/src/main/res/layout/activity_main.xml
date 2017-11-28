@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
+
+
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -6,7 +8,7 @@
     android:layout_height="match_parent"
     tools:context="crafters.fnit.fnitmcsassistant.MainActivity">
 
-    <android.support.v7.widget.RecyclerView
+    <!--android.support.v7.widget.RecyclerView
         android:id="@+id/playersRecyclerView"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -15,7 +17,18 @@
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.0" /-->
+
+    <!--<fragment-->
+        <!--android:id="@+id/main_warpper"-->
+        <!--android:name="crafters.fnit.fnitmcsassistant.HomeFragment"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--app:layout_constraintBottom_toTopOf="@+id/navigation"-->
+        <!--app:layout_constraintEnd_toEndOf="parent"-->
+        <!--app:layout_constraintStart_toStartOf="parent"-->
+        <!--app:layout_constraintTop_toTopOf="parent"-->
+        <!--tools:layout="@layout/fragment_home" />-->
 
     <android.support.design.widget.BottomNavigationView
         android:id="@+id/navigation"
@@ -28,4 +41,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:menu="@menu/item_bottom_navigation" />
+
+    <FrameLayout
+        android:id="@+id/main_warpper"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </FrameLayout>
 </android.support.constraint.ConstraintLayout>
