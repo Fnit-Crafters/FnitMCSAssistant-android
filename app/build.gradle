@@ -22,6 +22,7 @@ android {
 }
 
 dependencies {
+    implementation 'com.android.support:support-v4:26.1.0'
     compile fileTree(dir: 'libs', include: ['*.jar'])
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
@@ -42,7 +43,7 @@ dependencies {
     compile 'com.github.kittinunf.fuel:fuel-android:1.12.+'
 
     compile 'com.github.bumptech.glide:glide:4.3.1'
-    compile ("com.github.bumptech.glide:recyclerview-integration:4.3.1") {
+    compile("com.github.bumptech.glide:recyclerview-integration:4.3.1") {
         transitive = false
     }
 
@@ -59,3 +60,5 @@ repositories {
 }
 
 apply plugin: 'com.google.gms.google-services'
+
+apply plugin: 'kotlin-android-extensions'
