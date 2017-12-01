@@ -2,6 +2,7 @@ package crafters.fnit.fnitmcsassistant.Adapter
 
 import android.graphics.Color
 import android.support.v7.widget.RecyclerView
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -31,11 +32,13 @@ class PlayerAdapter(playerSet: Array<Player>): RecyclerView.Adapter<PlayerAdapte
 
     override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): ViewHolder {
         var view: View = LayoutInflater.from(parent?.context).inflate(R.layout.player_recyclerview_cell, parent, false)
+        Log.i("Fnit", view.toString())
 
         return ViewHolder(view)
     }
 
     override fun onBindViewHolder(holder: ViewHolder?, position: Int) {
+        Log.i("Fnit", "onBindViewHolder:" + holder.toString())
         val h = holder ?: return
         val player = playerSet[position]
 
