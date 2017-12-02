@@ -1,6 +1,7 @@
 package crafters.fnit.fnitmcsassistant.Adapter
 
 import android.graphics.Color
+import android.support.constraint.ConstraintLayout
 import android.support.v7.widget.RecyclerView
 import android.util.Log
 import android.view.LayoutInflater
@@ -22,12 +23,14 @@ import java.util.*
 class PlayerAdapter(playerSet: Array<Player>): RecyclerView.Adapter<PlayerAdapter.ViewHolder>() {
 
     val playerSet: Array<Player> = playerSet
+    var listener: View.OnClickListener? = null
 
     class ViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
 
         var playerName: TextView = itemView.findViewById(R.id.playerName)
         var playerIcon: ImageView = itemView.findViewById(R.id.playerIcon)
         var status: TextView = itemView.findViewById(R.id.status)
+        var cell: ConstraintLayout = itemView.findViewById(R.id.playerCell)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): ViewHolder {
@@ -44,6 +47,7 @@ class PlayerAdapter(playerSet: Array<Player>): RecyclerView.Adapter<PlayerAdapte
 
         h.playerName.text = player.name
         GlideApp.with(h.itemView).load(player.urlString).apply(RequestOptions.circleCropTransform()).into(h.playerIcon)
+
         var statusMessage: String
 
         if (player.isOnline) {
@@ -61,6 +65,18 @@ class PlayerAdapter(playerSet: Array<Player>): RecyclerView.Adapter<PlayerAdapte
             h.status.text = statusText
             h.status.setTextColor(Color.GRAY)
         }
+
+        h.cell.setOnClickListener(object: View.OnClickListener {
+            override fun onClick(p0: View?) {
+                val lis = listener ?: return
+                lis.onClick(p0)
+            }
+        })
+
+    }
+
+    fun setOnItemClickListener(listener: View.OnClickListener) {
+        this.listener = listener
     }
 
     override fun getItemCount(): Int = playerSet.size

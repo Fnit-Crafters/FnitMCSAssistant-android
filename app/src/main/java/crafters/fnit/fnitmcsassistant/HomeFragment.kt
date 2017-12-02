@@ -1,5 +1,6 @@
 package crafters.fnit.fnitmcsassistant
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v7.widget.LinearLayoutManager
@@ -8,6 +9,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
@@ -66,6 +68,25 @@ class HomeFragment : Fragment() {
                 val playerAdapter = PlayerAdapter(playerArray)
 
                 playerRecyclerView.adapter = playerAdapter
+
+                playerAdapter.setOnItemClickListener(object: View.OnClickListener {
+                    override fun onClick(p0: View?) {
+                        p0 ?: return
+
+                        val nameTextView = p0.findViewById<TextView>(R.id.playerName)
+                        val name = nameTextView.text
+                        Log.i("Fnit", name.toString())
+
+                        val playerDetailActivity = PlayerDetailActivity()
+                        val intent = Intent(activity, playerDetailActivity.javaClass)
+
+                        val bundle = Bundle()
+                        bundle.putString("playerName", name.toString())
+                        intent.putExtras(bundle)
+
+                        startActivity(intent)
+                    }
+                })
             }
 
             override fun onCancelled(error: DatabaseError?) {
