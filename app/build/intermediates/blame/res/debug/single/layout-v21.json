@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "/Users/taikifnit/AndroidStudioProjects/FnitMCSAssistant/app/build/intermediates/res/merged/debug/layout-v21/notification_template_icon_group.xml",
+        "source": "/Users/taikifnit/.android/build-cache/115142d2b0f67dd91610d17b760cbbd76f8d8ac1/output/res/layout-v21/notification_template_icon_group.xml"
+    },
+    {
+        "merged": "/Users/taikifnit/AndroidStudioProjects/FnitMCSAssistant/app/build/intermediates/res/merged/debug/layout-v21/notification_action.xml",
+        "source": "/Users/taikifnit/.android/build-cache/115142d2b0f67dd91610d17b760cbbd76f8d8ac1/output/res/layout-v21/notification_action.xml"
+    },
+    {
+        "merged": "/Users/taikifnit/AndroidStudioProjects/FnitMCSAssistant/app/build/intermediates/res/merged/debug/layout-v21/notification_template_custom_big.xml",
+        "source": "/Users/taikifnit/.android/build-cache/115142d2b0f67dd91610d17b760cbbd76f8d8ac1/output/res/layout-v21/notification_template_custom_big.xml"
+    },
+    {
+        "merged": "/Users/taikifnit/AndroidStudioProjects/FnitMCSAssistant/app/build/intermediates/res/merged/debug/layout-v21/notification_action_tombstone.xml",
+        "source": "/Users/taikifnit/.android/build-cache/115142d2b0f67dd91610d17b760cbbd76f8d8ac1/output/res/layout-v21/notification_action_tombstone.xml"
+    }
+]

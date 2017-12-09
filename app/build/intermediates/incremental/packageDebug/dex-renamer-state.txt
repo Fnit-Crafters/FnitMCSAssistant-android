@@ -1,0 +1,7 @@
+#Mon Oct 09 12:32:37 JST 2017
+base.0=/Users/taikifnit/AndroidStudioProjects/FnitMCSAssistant/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_a7c78ca52f4f0d52c6d1ff396e23e065db13d5a5
+renamed.1=classes2.dex
+renamed.0=classes.dex
+file.1=/Users/taikifnit/AndroidStudioProjects/FnitMCSAssistant/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_cbf8f75348b3ae14984cefbc82d9293bb9a15601/classes.dex
+base.1=/Users/taikifnit/AndroidStudioProjects/FnitMCSAssistant/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run-bootstrap_cbf8f75348b3ae14984cefbc82d9293bb9a15601
+file.0=/Users/taikifnit/AndroidStudioProjects/FnitMCSAssistant/app/build/intermediates/transforms/dex/debug/folders/1000/10000/instant-run_a7c78ca52f4f0d52c6d1ff396e23e065db13d5a5/classes.dex

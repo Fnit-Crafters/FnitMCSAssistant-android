@@ -1,0 +1,4 @@
+#Fri Dec 01 19:26:29 JST 2017
+base.0=/Users/taikifnit/AndroidStudioProjects/FnitMCSAssistant/app/build/intermediates/transforms/dexMerger/debug/27
+path.0=classes.dex
+renamed.0=classes.dex

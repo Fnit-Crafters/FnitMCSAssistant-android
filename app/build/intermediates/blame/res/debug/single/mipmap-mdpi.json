@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "/Users/taikifnit/AndroidStudioProjects/FnitMCSAssistant/app/build/intermediates/res/merged/debug/mipmap-mdpi/ic_launcher_round.png",
+        "source": "/Users/taikifnit/AndroidStudioProjects/FnitMCSAssistant/app/src/main/res/mipmap-mdpi/ic_launcher_round.png"
+    },
+    {
+        "merged": "/Users/taikifnit/AndroidStudioProjects/FnitMCSAssistant/app/build/intermediates/res/merged/debug/mipmap-mdpi/ic_launcher.png",
+        "source": "/Users/taikifnit/AndroidStudioProjects/FnitMCSAssistant/app/src/main/res/mipmap-mdpi/ic_launcher.png"
+    }
+]
