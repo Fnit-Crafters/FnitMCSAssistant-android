@@ -5,6 +5,8 @@ It shows online players(also last login date).
 ## Feature
 * Show players that joined server.
 
+![HOME](https://raw.githubusercontent.com/Fnit-Crafters/FnitMCSAssistant-android/master/screenshots/home.jpg "HOME")
+
 ## Milestones
 * Login alert
 * Community (Chat, BBS)
