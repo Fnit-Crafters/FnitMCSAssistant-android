@@ -2,7 +2,7 @@
 M-Assistant is minecraft server assistant app.
 It shows online players(also last login date).
 
-debug apk: https://github.com/Fnit-Crafters/FnitMCSAssistant-android/raw/master/app/build/outputs/apk/massistant.apk
+debug apk: https://github.com/Fnit-Crafters/FnitMCSAssistant-android/raw/master/app/build/outputs/apk/debug/massistant.apk
 
 ## Feature
 * Show players that joined server.
